@@ -11,7 +11,7 @@ sudo dnf install gcc kernel-headers kernel-devel akmod-nvidia xorg-x11-drv-nvidi
 sudo akmods --force
 sudo dracut --force
 
-sudo dnf config-manager --add-repo https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo
+sudo dnf config-manager add-repo --from-repofile=https://developer.download.nvidia.com/compute/cuda/repos/fedora39/x86_64/cuda-fedora39.repo
 sudo dnf clean all -y
 sudo dnf module disable nvidia-driver
 sudo dnf -y install cuda
