@@ -15,7 +15,7 @@ sudo dnf install -y code
 sudo flatpak install flathub io.github.shiftey.Desktop
 
 #docker
-sudo dnf install dnf-plugins-core
+sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
 sudo dnf install docker-ce docker-ce-cli containerd.io -y
 
