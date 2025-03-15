@@ -5,4 +5,4 @@ sudo dnf install sddm -y
 sudo systemctl enable --force sddm.service
 sudo systemctl set-default graphical.target
 
-dnf install plasma-workspace-x11
+sudo dnf -y install plasma-workspace-x11

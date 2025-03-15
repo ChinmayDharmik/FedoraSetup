@@ -1,3 +1,5 @@
+# bash aliases
+
 alias powermode='sudo auto-cpufreq --force performance'
 alias batterymode='sudo auto-cpufreq --force powersave'
 alias powerst='sudo auto-cpufreq --force reset'
@@ -19,3 +21,5 @@ alias docker-clean=' \
   docker volume prune -f '
 alias text-mode='sudo systemctl set-default multi-user.target'
 alias gui-mode='sudo systemctl set-default graphical.target'
+
+alias cs='cd;ls'
