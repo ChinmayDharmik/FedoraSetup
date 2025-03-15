@@ -113,78 +113,11 @@ sudo config-manager --set-enabled rpmfusion-nonfree-updates
 sudo config-manager --set-enabled rpmfusion-free-updates
 sudo dnf install gstreamer1-plugin-openh264 gstreamer1-libav --exclude=gstreamer1-plugins-bad-free-devel -y
 
-OPTIONS=(
-    0  "Run First-Boot tweaks"
-    1  "Optimize BootTime"
-    2  "Install Dev tools"
-    3  "Install flutter"
-    4  "Install Nvidia drivers"
-    5  "Post Installing Nvidia Drivers"
-    6  "Install Update-GRUB"
-    7  "Install Prefered apps"
-    8  "Run All"
-    9 "Reboot"
-    10 "Quit"
-)
+echo "Applying Base configs"
 
-while true; do
-    CHOICE=$(dialog --clear \
-                --backtitle "$BACKTITLE - Main menu $(lscpu | grep -i "Model name:" | cut -d':' -f2- - )" \
-                --title "$TITLE" \
-                --nocancel \
-                --menu "$MENU_MSG" \
-                $HEIGHT $WIDTH $CHOICE_HEIGHT \
-                "${OPTIONS[@]}" \
-                2>&1 >/dev/tty)
-    clear
-    case $CHOICE in 
-        0)
-            scripts/base.sh
-        ;;
-        1) 
-            
-        ;;
-       
-        2) 
-            scripts/optimizeBootTime.sh
-        ;;
-        
-        3) 
-            scripts/installDevTools.sh
-        ;;
-
-
-        4) 
-            scripts/flutter.sh
-        ;;
-
-        5)
-            scripts/nvidiaGpu.sh
-        ;;
-
-        6)
-            scripts/update_grub.sh
-        ;;
-        7)
-            scripts/autoInstallMyApps.sh
-        ;;
-        8)
-            scripts/base.sh
-            scripts/optimizeBootTime.sh
-            scripts/installDevTools.sh
-            scripts/flutter.sh
-            #scripts/nvidiaGpu.sh
-            scripts/update_grub.sh
-            scripts/autoInstallMyApps.sh
-        ;;
-        9)
-            sudo systemctl reboot
-        ;;
-
-        10) 
-            # Undo any changes made to this repository to clean up
-            exit 0
-        ;;
-
-    esac
-done
+scripts/common/base.sh
+scripts/common/nvidia.sh
+scripts/experience/kde.sh
+scripts/common/apps.sh
+scripts/common/fonts.sh
+scripts/common/dev.sh
