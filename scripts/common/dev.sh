@@ -12,7 +12,7 @@ dnf check-update
 sudo dnf install -y code
 
 # GitHub Desktop
-sudo flatpak install flathub io.github.shiftey.Desktop
+sudo flatpak install flathub io.github.shiftey.Desktop -y
 
 #docker
 sudo dnf install -y dnf-plugins-core
