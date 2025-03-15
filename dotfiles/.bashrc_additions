@@ -6,3 +6,4 @@ fi
 
 eval "$(starship init bash)"
 export TERM=xterm-256color
+

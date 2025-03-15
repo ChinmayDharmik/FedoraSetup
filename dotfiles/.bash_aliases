@@ -23,3 +23,4 @@ alias text-mode='sudo systemctl set-default multi-user.target'
 alias gui-mode='sudo systemctl set-default graphical.target'
 
 alias cs='cd;ls'
+alias homelab='ssh -X root@lab '

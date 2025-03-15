@@ -64,6 +64,7 @@ echo "Installing Starship and its dependencies"
 curl -sS https://starship.rs/install.sh | sh
 mkdir -p ~/.config && touch ~/.config/starship.toml
 
-echo 'eval "$(starship init bash)"'>> ~/.bashrc
-echo 'export TERM=xterm-256color'>> ~/.bashrc
 cp dotfiles/starship.toml ~/.config/starship.toml
+cp ~/.bashrc ~/.bashrc.bak
+cat dotfiles/.bashrc_additions >> ~/.bashrc
+cat dotfiles/.bash_aliases >> ~/.bashrc
