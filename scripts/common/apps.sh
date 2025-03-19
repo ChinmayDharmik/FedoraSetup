@@ -9,6 +9,7 @@ sudo dnf config-manager addrepo --from-repofile=https://download.sublimetext.com
 
 # Install system utilities and applications via dnf
 rpmapps=(
+    nano
     github-desktop
     vlc
     kitty
