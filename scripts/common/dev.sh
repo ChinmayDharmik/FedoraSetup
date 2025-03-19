@@ -14,6 +14,11 @@ sudo dnf install -y code
 # GitHub Desktop
 sudo flatpak install flathub io.github.shiftey.Desktop -y
 
+# DNF5 installation commands
+sudo dnf install dnf5-plugins
+sudo dnf config-manager addrepo --from-repofile=https://cli.github.com/packages/rpm/gh-cli.repo
+sudo dnf install gh --repo gh-cli
+
 #docker
 sudo dnf install -y dnf-plugins-core
 sudo dnf config-manager addrepo --from-repofile=https://download.docker.com/linux/fedora/docker-ce.repo
