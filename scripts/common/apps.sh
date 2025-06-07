@@ -30,6 +30,9 @@ rpmapps=(
     trash-cli
     fzf
     bash-completion
+    mosh
+    unrar
+
 )
 
 for app in "${rpmapps[@]}";do
